@@ -1,0 +1,73 @@
+@import "./tokens.css";
+@import "./layout.css";
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: var(--font-body);
+    font-size: var(--text-body-lg);
+    line-height: var(--leading-body-lg);
+    color: var(--black);
+    background-color: var(--bg-primary);
+}
+
+button, input, textarea, select{
+    font-family: inherit;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+
+/* typography */
+.heading-xl{
+    font-size: var(--text-xl);
+    line-height: var(--leading-xl);
+    font-weight: 700;
+}
+
+.heading-lg{
+    font-size: var(--text-lg);
+    line-height: var(--leading-lg);
+    font-weight: 700;
+}
+
+.heading-md{
+    font-size: var(--text-md);
+    line-height: var(--leading-md);
+    font-weight: 700;
+}
+
+.heading-sm{
+    font-size: var(--text-sm);
+    line-height: var(--leading-sm);
+    font-weight: 700;
+    letter-spacing: 2.4px;
+}
+
+.body-lg{
+    font-size: var(--text-body-lg);
+    line-height: var(--leading-body-lg);
+    font-weight: 400;
+}
+
+.body-md{
+    font-size: var(--text-body-md);
+    line-height: var(--leading-body-md);
+    font-weight: 700;
+}

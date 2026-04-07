@@ -1,0 +1,60 @@
+:root{
+    /* Colors */
+    --main-purple: #635FC7;
+    --main-purple-hover: #A8A4FF;
+    --black: #000112;
+    --very-dark-grey: #20212C;
+    --lines-dark: #3E3F4E;
+    --medium-grey: #828FA3;
+    --lines-light: #E4EBFA;
+    --light-grey: #F4F7FD;
+    --white: #FFFFFF;
+    --red: #EA5555;
+    --red-hover: #FF9898;
+    --dark-grey: #2B2C37;
+
+    /* semantic tokens */
+    --bg-primary: var(--light-grey);
+    --bg-surface: var(--white);
+    --border-color: var(--lines-light);
+    --text-primary: var(var(--black))
+
+    /* Shadow */
+    --shadow-card: 0px 4px 6px rgba(54, 78, 126, 0.1);
+
+
+    /* Typography */
+    --font-body: "Plus Jakarta Sans", sans-serif;
+    --text-xl: 2.4rem;
+    --text-lg: 1.8rem;
+    --text-md: 1.5rem;
+    --text-sm: 1.2rem;
+    --text-body-lg: 1.3rem;
+    --text-body-md: 1.2rem;
+
+
+    --leading-xl: 3rem;
+    --leading-lg: 2.3rem;
+    --leading-md: 1.9rem;
+    --leading-sm: 1.5rem;
+    --leading-body-lg: 2.3rem;
+    --leading-body-md: 1.5rem;
+
+
+    /* Spacing */
+    --spacing-xs: 0.4rem;
+    --spacing-sm: 0.8rem;
+    --spacing-md: 1.6rem;
+    --spacing-lg: 2.4rem;
+    --spacing-xl: 3.2rem;
+
+
+    /* Breakpoints */
+}
+
+[data-theme="dark"]{
+    --bg-primary: var(--dark-grey);
+    --bg-surface: var(--very-dark-grey);
+    --border-color: var(--lines-dark);
+    --text-primary: var(--white);
+}

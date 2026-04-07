@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/global.css" />
+    <title>Kanban</title>
+  </head>
+  <body>
+    <!-- side bar -->
+    <aside class="sidebar">
+      <header class="sidebar-top">
+        <div class="sidebar-logo">
+          <img src="/assets/logo.svg" alt="Kanban Logo" />
+          <span class="sidebar-logo-text">kanban</span>
+        </div>
+      </header>
+      <div class="sidebar-main">
+        <div class="sidebar-menu">
+          <p class="heading-sm sidebar-menu-title">ALL BOARDS(3)</p>
+          <ul class="sidebar-menu-items">
+            <li class="heading-md sidebar-menu-item">
+              <i data-lucide="panels-right-bottom"></i>
+              Platform Launch
+            </li>
+            <li class="heading-md sidebar-menu-item">
+              <i data-lucide="panels-right-bottom"></i>
+              Marketing Plan
+            </li>
+            <li class="heading-md sidebar-menu-item">
+              <i data-lucide="panels-right-bottom"></i>
+              Roadmap
+            </li>
+            <li class="heading-md">
+              <i data-lucide="panels-right-bottom"></i>
+              +Create New Board
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-bottom">
+          <div class="theme-toggle">
+            <i data-lucide="sun"></i>
+            <div class="toggle-track">
+              <div class="toggle-thumb"></div>
+            </div>
+            <i data-lucide="moon-star"></i>
+          </div>
+          <button class="heading-md hide-sidebar">
+            <i data-lucide="eye-off"></i>
+            Hide Sidebar
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <!-- header -->
+      <header class="top-nav">
+        <div class="nav-left">
+          <img class="mobile-logo" src="/assets/logo.svg" alt="Logo" />
+          <div class="board-title">
+            <span class="board-name">Platform Launch</span>
+            <i data-lucide="chevron-down" class="mobile-only"></i>
+          </div>
+        </div>
+
+        <div class="nav-right">
+          <button class="mobile-only">
+            <i data-lucide="plus"></i>
+          </button>
+          <button class="btn-add-task" type="button">+Add New Task</button>
+          <button class="btn-menu" type="button">
+              <i data-lucide="ellipsis-vertical"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- main content -->
+      <main class="board-area">
+        <section class="empty-state">
+          <p>The board is empty. Create a new column to get started.</p>
+          <button type="button">+Add New Column</button>
+        </section>
+
+        <section class="board-columns">
+          <div class="column">
+            <div class="column-header">
+              <span class="column-dot"></span>
+              <h4>To do(4)</h4>
+            </div>
+            <ul class="cards-list">
+              <li class="card">
+                <h3>Build UI for onboarding flow</h3>
+                <p class="card-subtasks">0 of 3 substasks</p>
+              </li>
+            </ul>
+          </div>
+          <!-- more columns -->
+
+          <button class="add-column-btn" type="button">+New Column</button>
+        </section>
+      </main>
+    </div>
+
+    <!-- modals (outside main-wrapper, at the end of body) -->
+    <div class="modal" id="modal-task-detail" aria-hidden="true"></div>
+    <div class="modal" id="modal-add-task" aria-hidden="true"></div>
+    <div class="modal" id="modal-edit-task" aria-hidden="true"></div>
+    <div class="modal" id="modal-add-board" aria-hidden="true"></div>
+    <div class="modal" id="modal-edit-board" aria-hidden="true"></div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
