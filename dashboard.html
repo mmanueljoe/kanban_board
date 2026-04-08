@@ -25,7 +25,7 @@
         <div class="sidebar-menu">
           <p class="heading-sm sidebar-menu-title">ALL BOARDS(3)</p>
           <ul class="sidebar-menu-items">
-            <li class="heading-md sidebar-menu-item">
+            <li class="heading-md sidebar-menu-item active">
               <i data-lucide="panels-right-bottom"></i>
               Platform Launch
             </li>
@@ -37,7 +37,7 @@
               <i data-lucide="panels-right-bottom"></i>
               Roadmap
             </li>
-            <li class="heading-md">
+            <li class="heading-md sidebar-menu-item board-item-new">
               <i data-lucide="panels-right-bottom"></i>
               +Create New Board
             </li>
@@ -76,34 +76,42 @@
           </button>
           <button class="btn-add-task" type="button">+Add New Task</button>
           <button class="btn-menu" type="button">
-              <i data-lucide="ellipsis-vertical"></i>
+            <i data-lucide="ellipsis-vertical"></i>
           </button>
         </div>
       </header>
 
       <!-- main content -->
       <main class="board-area">
-        <section class="empty-state">
+        <!-- <section class="empty-state">
           <p>The board is empty. Create a new column to get started.</p>
           <button type="button">+Add New Column</button>
-        </section>
+        </section> -->
 
         <section class="board-columns">
           <div class="column">
             <div class="column-header">
               <span class="column-dot"></span>
-              <h4>To do(4)</h4>
+              <h4 class="heading-md">TO DO (4)</h4>
             </div>
             <ul class="cards-list">
+              <li class="card">
+                <h3 class="heading-md">Build UI for onboarding flow</h3>
+                <p class="card-subtasks text-body-md">0 of 3 substasks</p>
+              </li>
+
               <li class="card">
                 <h3>Build UI for onboarding flow</h3>
                 <p class="card-subtasks">0 of 3 substasks</p>
               </li>
             </ul>
           </div>
-          <!-- more columns -->
 
-          <button class="add-column-btn" type="button">+New Column</button>
+          
+          
+          <!-- more columns -->
+          <button class="add-column-btn heading-md" type="button">+New Column</button>
+
         </section>
       </main>
     </div>

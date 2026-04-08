@@ -12,12 +12,17 @@
     --red: #EA5555;
     --red-hover: #FF9898;
     --dark-grey: #2B2C37;
+    --stroke: #979797;
 
     /* semantic tokens */
     --bg-primary: var(--light-grey);
     --bg-surface: var(--white);
     --border-color: var(--lines-light);
-    --text-primary: var(var(--black))
+    --text-primary: var(--black);
+    --btn-secondary-bg: var(--lines-light);
+    --btn-secondary-bg-hover: var(--light-grey);
+
+
 
     /* Shadow */
     --shadow-card: 0px 4px 6px rgba(54, 78, 126, 0.1);
@@ -57,4 +62,6 @@
     --bg-surface: var(--very-dark-grey);
     --border-color: var(--lines-dark);
     --text-primary: var(--white);
+    --btn-secondary-bg: var(--white);
+    --btn-secondary-bg-hover: var(--white);
 }

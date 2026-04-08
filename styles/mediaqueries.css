@@ -1,0 +1,28 @@
+/* mobile */
+
+@media (max-width: 767px){
+    aside.sidebar{
+        display: none;
+    }
+
+    .nav-left .mobile-logo{
+        display: block;
+    }
+
+    .board-title .mobile-only{
+        display: flex;
+    }
+    
+    .main-wrapper{
+        max-width: 100%;
+    }
+
+    .nav-right .btn-add-task{
+        display: none;
+    }
+
+    .nav-right button.mobile-only{
+        display: flex;
+    }
+
+}
