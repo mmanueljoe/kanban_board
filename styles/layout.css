@@ -224,14 +224,6 @@ main.board-area {
     gap: var(--spacing-sm);
 }
 
-.column-dot{
-    width: 1.2rem;
-    height: 1.2rem;
-    border-radius: 50%;
-    background-color: var(--main-purple);
-    flex-shrink: 0;
-}
-
 .column-header h4 {
   color: var(--medium-grey);
 }
@@ -243,25 +235,6 @@ main.board-area {
   height: 100%;
 }
 
-.cards-list .card {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--bg-surface);
-  padding: var(--spacing-lg);
-  border-radius: var(--spacing-sm);
-  box-shadow: var(--shadow-card);
-  gap: 0.8rem;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.card h3:hover {
-  color: var(--main-purple);
-}
-
-.card p {
-  color: var(--medium-grey);
-}
 
 .add-column-btn {
   width: 28rem;
@@ -333,12 +306,6 @@ header.top-nav {
   align-items: center;
   gap: 1rem;
   flex-shrink: 0;
-}
-
-.nav-right .btn-add-task {
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
 }
 
 .nav-right button.mobile-only {

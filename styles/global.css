@@ -1,6 +1,8 @@
 @import "./tokens.css";
 @import "./layout.css";
 @import "./mediaqueries.css";
+@import "./components.css";
+
 
 *, *::before, *::after {
     padding: 0;
@@ -19,6 +21,7 @@ body{
     line-height: var(--leading-body-lg);
     color: var(--black);
     background-color: var(--bg-primary);
+    position: relative;
 }
 
 button, input, textarea, select{
@@ -61,10 +64,25 @@ img{
     letter-spacing: 2.4px;
 }
 
+.heading-sm-grey{
+    font-size: var(--text-sm);
+    line-height: var(--leading-body-sm);
+    font-weight: 700;
+    color: var(--medium-grey);
+}
+
 .body-lg{
     font-size: var(--text-body-lg);
     line-height: var(--leading-body-lg);
     font-weight: 400;
+    color: var(--medium-grey);
+}
+
+.body-lg-grey{
+    font-size: var(--text-body-lg);
+    line-height: var(--leading-body-lg);
+    font-weight: 700;
+    color: var(--medium-grey);
 }
 
 .body-md{

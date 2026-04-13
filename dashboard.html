@@ -71,10 +71,12 @@
         </div>
 
         <div class="nav-right">
-          <button class="mobile-only">
+          <button class="btn btn-primary-lg mobile-only">
             <i data-lucide="plus"></i>
           </button>
-          <button class="btn-add-task" type="button">+Add New Task</button>
+          <button class="btn btn-primary-lg btn-add-task" type="button">
+            +Add New Task
+          </button>
           <button class="btn-menu" type="button">
             <i data-lucide="ellipsis-vertical"></i>
           </button>
@@ -83,15 +85,19 @@
 
       <!-- main content -->
       <main class="board-area">
-        <!-- <section class="empty-state">
-          <p>The board is empty. Create a new column to get started.</p>
-          <button type="button">+Add New Column</button>
-        </section> -->
+        <section class="empty-state">
+          <p class="heading-lg">
+            The board is empty. Create a new column to get started.
+          </p>
+          <button type="button" class="btn btn-primary-lg">
+            +Add New Column
+          </button>
+        </section>
 
         <section class="board-columns">
           <div class="column">
             <div class="column-header">
-              <span class="column-dot"></span>
+              <span class="column-dot column-dot-blue"></span>
               <h4 class="heading-md">TO DO (4)</h4>
             </div>
             <ul class="cards-list">
@@ -107,18 +113,116 @@
             </ul>
           </div>
 
-          
-          
           <!-- more columns -->
-          <button class="add-column-btn heading-md" type="button">+New Column</button>
-
+          <button class="add-column-btn heading-md" type="button">
+            +New Column
+          </button>
         </section>
       </main>
     </div>
 
     <!-- modals (outside main-wrapper, at the end of body) -->
-    <div class="modal" id="modal-task-detail" aria-hidden="true"></div>
-    <div class="modal" id="modal-add-task" aria-hidden="true"></div>
+    <div class="modal" id="modal-task-detail" aria-hidden="true">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title">
+            <h3 class="heading-lg">
+              Research pricing points of various competitors and trial different
+              business models
+            </h3>
+            <button class="btn-icon" type="button">
+              <i data-lucide="ellipsis-vertical"></i>
+            </button>
+          </div>
+          <p class="body-lg">
+            We know what we're planning to build for version one. Now we need to
+            finalise the first pricing model we'll use. Keep iterating the
+            subtasks until we have a coherent proposition.
+          </p>
+        </div>
+
+        <div class="modal-section">
+          <p class="heading-sm-grey">Subtasks (2 of 3)</p>
+          <form action="" class="subtasks-list">
+            <div class="subtask">
+              <input type="checkbox" id="subtask-1" class="body-lg-grey" />
+              <label for="subtask-1" class="body-lg-grey"
+                >Research competitor pricing and business models</label
+              >
+            </div>
+            <div class="subtask">
+              <input type="checkbox" id="subtasks-2" />
+              <label for="subtask-2" class="body-lg-grey"
+                >Outline a business model that works for our solution</label
+              >
+            </div>
+            <div class="subtask">
+              <input type="checkbox" id="subtask-3" />
+              <label for="subtask-3" class="body-lg-grey"
+                >Surveying and testing</label
+              >
+            </div>
+          </form>
+        </div>
+        <div class="modal-section">
+          <label class="heading-sm-grey" for="status-select"
+            >Current Status</label
+          >
+          <select id="status-select" class="dropdown">
+            <option value="todo">Todo</option>
+            <option value="doing">Doing</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-add-task" aria-hidden="false">
+      <div class="modal-content">
+        <h3 class="heading-lg">Add New Task</h3>
+        <form action="">
+          <div class="form-group">
+            <label for="title" class="heading-sm-grey"> Title </label>
+            <input
+              type="text"
+              id="title"
+              placeholder="e.g. Take coffee break"
+            />
+          </div>
+          <div class="form-group">
+            <label for="description" class="heading-sm-grey">
+              Description
+            </label>
+            <textarea
+              name="description"
+              id="description"
+              placeholder="e.g.It's always good take a break. This 15 minutes break will recharge the batteries a little"
+            >
+            </textarea>
+          </div>
+          <div class="form-group">
+            <p class="heading-sm-grey">Subtasks</p>
+            <div class="subtask-item">
+              <input type="text" id="subtask" placeholder="e.g. Make coffee" />
+              <button type="button" class="btn">
+                <i data-lucide="x"></i>
+              </button>
+            </div>
+            <button type="button" class="btn btn-secondary add-subtask-btn">
+              +Add New Subtask
+            </button>
+          </div>
+          <div class="form-group">
+            <label for="status" class="heading-sm-grey"> Status </label>
+            <select id="status" class="dropdown">
+              <option value="todo">Todo</option>
+              <option value="doing">Doing</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary-lg">Create Task</button>
+        </form>
+      </div>
+    </div>
     <div class="modal" id="modal-edit-task" aria-hidden="true"></div>
     <div class="modal" id="modal-add-board" aria-hidden="true"></div>
     <div class="modal" id="modal-edit-board" aria-hidden="true"></div>

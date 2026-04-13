@@ -13,6 +13,9 @@
     --red-hover: #FF9898;
     --dark-grey: #2B2C37;
     --stroke: #979797;
+    --dot-purple: #635FC7;
+    --dot-blue: #49C4E5;
+    --dot-green: #67E2AE;
 
     /* semantic tokens */
     --bg-primary: var(--light-grey);
