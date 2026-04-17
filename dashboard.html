@@ -14,7 +14,7 @@
   </head>
   <body>
     <!-- side bar -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
       <header class="sidebar-top">
         <div class="sidebar-logo">
           <img src="/assets/logo.svg" alt="Kanban Logo" />
@@ -37,21 +37,23 @@
               <i data-lucide="panels-right-bottom"></i>
               Roadmap
             </li>
-            <li class="heading-md sidebar-menu-item board-item-new">
+            <li class="heading-md sidebar-menu-item board-item-new"
+            id="create-board"
+            >
               <i data-lucide="panels-right-bottom"></i>
               +Create New Board
             </li>
           </ul>
         </div>
         <div class="sidebar-bottom">
-          <div class="theme-toggle">
+          <div class="theme-toggle" id="theme-toggler">
             <i data-lucide="sun"></i>
             <div class="toggle-track">
               <div class="toggle-thumb"></div>
             </div>
             <i data-lucide="moon-star"></i>
           </div>
-          <button class="heading-md hide-sidebar">
+          <button class="heading-md hide-sidebar" id="hide-sidebar">
             <i data-lucide="eye-off"></i>
             Hide Sidebar
           </button>
@@ -59,6 +61,9 @@
       </div>
     </aside>
 
+    <button class="show-sidebar-btn heading-md" id="show-sidebar">
+      <i data-lucide="eye"></i>
+    </button>
     <div class="main-wrapper">
       <!-- header -->
       <header class="top-nav">
@@ -71,10 +76,10 @@
         </div>
 
         <div class="nav-right">
-          <button class="btn btn-primary-lg mobile-only">
+          <button class="btn btn-primary-lg mobile-only" id="btn-add-task-mb">
             <i data-lucide="plus"></i>
           </button>
-          <button class="btn btn-primary-lg btn-add-task" type="button">
+          <button class="btn btn-primary-lg btn-add-task" type="button" id="btn-add-task">
             +Add New Task
           </button>
           <button class="btn-menu" type="button">
@@ -151,7 +156,7 @@
               >
             </div>
             <div class="subtask">
-              <input type="checkbox" id="subtasks-2" />
+              <input type="checkbox" id="subtask-2" />
               <label for="subtask-2" class="body-lg-grey"
                 >Outline a business model that works for our solution</label
               >
@@ -176,33 +181,36 @@
         </div>
       </div>
     </div>
-    <div class="modal" id="modal-add-task" aria-hidden="false">
+    <div class="modal" id="modal-add-task" aria-hidden="true">
       <div class="modal-content">
         <h3 class="heading-lg">Add New Task</h3>
         <form action="">
           <div class="form-group">
-            <label for="title" class="heading-sm-grey"> Title </label>
+            <label for="add-title" class="heading-sm-grey"> Title </label>
             <input
               type="text"
-              id="title"
+              id="add-title"
               placeholder="e.g. Take coffee break"
             />
           </div>
           <div class="form-group">
-            <label for="description" class="heading-sm-grey">
+            <label for="add-description" class="heading-sm-grey">
               Description
             </label>
             <textarea
               name="description"
-              id="description"
+              id="add-description"
               placeholder="e.g.It's always good take a break. This 15 minutes break will recharge the batteries a little"
-            >
-            </textarea>
+            ></textarea>
           </div>
           <div class="form-group">
             <p class="heading-sm-grey">Subtasks</p>
             <div class="subtask-item">
-              <input type="text" id="subtask" placeholder="e.g. Make coffee" />
+              <input
+                type="text"
+                id="add-subtask"
+                placeholder="e.g. Make coffee"
+              />
               <button type="button" class="btn">
                 <i data-lucide="x"></i>
               </button>
@@ -212,8 +220,8 @@
             </button>
           </div>
           <div class="form-group">
-            <label for="status" class="heading-sm-grey"> Status </label>
-            <select id="status" class="dropdown">
+            <label for="add-status" class="heading-sm-grey"> Status </label>
+            <select id="add-status" class="dropdown">
               <option value="todo">Todo</option>
               <option value="doing">Doing</option>
               <option value="done">Done</option>
@@ -223,13 +231,200 @@
         </form>
       </div>
     </div>
-    <div class="modal" id="modal-edit-task" aria-hidden="true"></div>
-    <div class="modal" id="modal-add-board" aria-hidden="true"></div>
-    <div class="modal" id="modal-edit-board" aria-hidden="true"></div>
+    <div class="modal" id="modal-edit-task" aria-hidden="true">
+      <div class="modal-content">
+        <h3 class="heading-lg">Edit Task</h3>
+        <form action="">
+          <div class="form-group">
+            <label for="edit-title" class="heading-sm-grey"> Title </label>
+            <input
+              type="text"
+              id="edit-title"
+              placeholder="e.g. Take coffee break"
+              value="Add authentication endpoints"
+            />
+          </div>
+          <div class="form-group">
+            <label for="edit-description" class="heading-sm-grey">
+              Description
+            </label>
+            <textarea
+              name="description"
+              id="edit-description"
+              placeholder="e.g.It's always good take a break. This 15 minutes break will recharge the batteries a little"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <p class="heading-sm-grey">Subtasks</p>
+            <div class="subtask-item">
+              <input
+                type="text"
+                id="edit-subtask"
+                placeholder="e.g. Make coffee"
+                value="Define user model"
+              />
+              <button type="button" class="btn">
+                <i data-lucide="x"></i>
+              </button>
+            </div>
+            <button type="button" class="btn btn-secondary add-subtask-btn">
+              +Add New Subtask
+            </button>
+          </div>
+          <div class="form-group">
+            <label for="edit-status" class="heading-sm-grey"> Status </label>
+            <select id="edit-status" class="dropdown">
+              <option value="todo">Todo</option>
+              <option value="doing">Doing</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary-lg">Save Changes</button>
+        </form>
+      </div>
+    </div>
+    <div class="modal" id="modal-add-board" aria-hidden="true">
+      <div class="modal-content">
+        <h3 class="heading-lg">Add New Board</h3>
+        <form action="">
+          <div class="form-group">
+            <label for="add-board-title" class="heading-sm-grey"
+              >Board Name
+            </label>
+            <input
+              type="text"
+              id="add-board-title"
+              placeholder="e.g. Web Design"
+            />
+          </div>
+          <div class="form-group">
+            <p class="heading-sm-grey">Board Columns</p>
+            <div class="column-item">
+              <input type="text" value="Todo" />
+              <button type="button" class="btn">
+                <i data-lucide="x"></i>
+              </button>
+            </div>
+            <div class="column-item">
+              <input type="text" value="Doing" />
+              <button type="button" class="btn">
+                <i data-lucide="x"></i>
+              </button>
+            </div>
+            <button type="button" class="btn btn-secondary add-subtask-btn">
+              +Add New Column
+            </button>
+          </div>
+          <button type="submit" class="btn btn-primary-lg">
+            Create New Board
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="modal" id="modal-edit-board" aria-hidden="true">
+      <div class="modal-content">
+        <h3 class="heading-lg">Edit Board</h3>
+        <form action="">
+          <div class="form-group">
+            <label for="edit-board-title" class="heading-sm-grey"
+              >Board Name
+            </label>
+            <input
+              type="text"
+              id="edit-board-title"
+              placeholder="e.g. Web Design"
+              value="Platform Launch"
+            />
+          </div>
+          <div class="form-group">
+            <p class="heading-sm-grey">Board Columns</p>
+            <div class="column-item">
+              <input type="text" value="Todo" />
+              <button type="button" class="btn">
+                <i data-lucide="x"></i>
+              </button>
+            </div>
+            <div class="column-item">
+              <input type="text" value="Doing" />
+              <button type="button" class="btn">
+                <i data-lucide="x"></i>
+              </button>
+            </div>
+            <div class="column-item">
+              <input type="text" value="Done" />
+              <button type="button" class="btn">
+                <i data-lucide="x"></i>
+              </button>
+            </div>
+            <button type="button" class="btn btn-secondary add-subtask-btn">
+              +Add New Column
+            </button>
+          </div>
+          <button type="submit" class="btn btn-primary-lg">Save Changes</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-delete-board" aria-hidden="true">
+      <div class="modal-content">
+        <h3 class="heading-lg confirmation-modal-heading">
+          Delete this board?
+        </h3>
+        <p class="body-lg">
+          Are you sure you want to delete the ‘Platform Launch’ board? This
+          action will remove all columns and tasks and cannot be reversed.
+        </p>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-danger">Delete</button>
+          <button type="button" class="btn btn-secondary">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-delete-task" aria-hidden="true">
+      <div class="modal-content">
+        <h3 class="heading-lg confirmation-modal-heading">Delete this task?</h3>
+        <p class="body-lg">
+          Are you sure you want to delete the ‘Build settings UI’ task and its
+          subtasks? This action cannot be reversed.
+        </p>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-danger">Delete</button>
+          <button type="button" class="btn btn-secondary">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-content">
+        <ul class="sidebar-menu-items">
+          <li class="heading-md sidebar-menu-item active">
+            <i data-lucide="panels-right-bottom"></i>
+            Platform Launch
+          </li>
+          <li class="heading-md sidebar-menu-item">
+            <i data-lucide="panels-right-bottom"></i>
+            Marketing Plan
+          </li>
+          <li class="heading-md sidebar-menu-item board-item-new">
+            <i data-lucide="panels-right-bottom"></i>
+            +Create New Board
+          </li>
+        </ul>
+        <div class="theme-toggle">
+          <i data-lucide="sun"></i>
+          <div class="toggle-track">
+            <div class="toggle-thumb"></div>
+          </div>
+          <i data-lucide="moon-star"></i>
+        </div>
+      </div>
+    </div>
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
       lucide.createIcons();
     </script>
+    <script src="./main.js"></script>
   </body>
 </html>

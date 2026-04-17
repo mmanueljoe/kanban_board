@@ -35,7 +35,7 @@
 
 .btn-secondary {
   height: 4rem;
-  padding: 0 var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
   background-color: var(--btn-secondary-bg);
   color: var(--main-purple);
   transition: background-color 0.3s;
@@ -47,7 +47,7 @@
 
 .btn-danger {
   height: 4rem;
-  padding: 0 var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
   background-color: var(--red);
   color: var(--white);
   transition: background-color 0.3s;
@@ -139,6 +139,8 @@
     flex-direction: column;
     gap: var(--spacing-md);
     z-index: 10;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 
@@ -148,8 +150,6 @@
 
 
 /* TASK DETAIL MODAL */
-
-
 .task-detail-content .modal-header{
     display: flex;
     flex-direction: column;
@@ -242,6 +242,7 @@
     padding: var(--spacing-md);
     border: 1px solid var(--border-color);
     border-radius: var(--spacing-xs);
+    font-weight: 500;
 }
 
 .modal-content .form-group > input::placeholder, .modal-content .form-group > textarea::placeholder{
@@ -255,27 +256,96 @@
     flex-direction: column;
     gap: var(--spacing-lg);
 }
-
-.form-group .subtask-item{
+.form-group .subtask-item, .form-group .column-item{
     display: flex;
     gap: var(--spacing-md);
     justify-content: space-between;
     margin-bottom: var(--spacing-md);
 }
 
-.subtask-item input{
+.subtask-item input, .column-item input{
     flex: 1;
     padding: var(--spacing-md);
     border: 1px solid var(--border-color);
     border-radius: var(--spacing-xs);
+    font-weight: 500;
 }
 
 .add-subtask-btn{
     width: 100%;
 }
 
-.subtask-item button > svg{
+.subtask-item button > svg, .column-item button > svg{
     color: var(--medium-grey);
     width: 2.6rem;
     height: 2.6rem;
 }
+
+
+/* CONFIRMATION MODALS */
+.modal-actions{
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-md);
+}
+
+
+.modal-actions button{
+   flex: 1;
+
+}
+
+.confirmation-modal-heading{
+    color: var(--red);
+}
+
+
+.mobile-menu{
+    position: fixed;
+    top: 8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 26.4rem;
+    background-color: var(--bg-surface);
+    border-radius: var(--spacing-sm);
+    padding: var(--spacing-md) 0;
+    z-index: 999;
+    box-shadow: var(--shadow-card);
+}
+
+.mobile-menu[aria-hidden="true"]{
+    display: none;
+}
+
+
+.sidebar.hidden{
+    width: 0;
+}
+
+.show-sidebar-btn{
+    position: fixed;
+    bottom: var(--spacing-lg);
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    width: 5.6rem;
+    height: 4.6rem;
+    border-radius: 0 10rem 10rem 0;
+    border: none;
+    background-color: var(--main-purple);
+    box-shadow: var(--shadow-card);
+    cursor: pointer;
+    display: none;
+}
+
+.show-sidebar-btn > svg{
+    color: var(--white);
+    height: 2rem;
+    width: 2rem;
+}
+
+.sidebar.hidden ~ .show-sidebar-btn, .sidebar.hidden + .show-sidebar-btn{
+    display: flex;
+}
+
+

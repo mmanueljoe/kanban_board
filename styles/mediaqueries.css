@@ -26,3 +26,10 @@
     }
 
 }
+
+
+@media (max-width: 375px){
+    .modal-actions{
+        flex-direction: column;
+    }
+}

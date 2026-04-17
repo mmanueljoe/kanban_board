@@ -1,7 +1,7 @@
 @import "./tokens.css";
 @import "./layout.css";
-@import "./mediaqueries.css";
 @import "./components.css";
+@import "./mediaqueries.css";
 
 
 *, *::before, *::after {
@@ -22,10 +22,12 @@ body{
     color: var(--black);
     background-color: var(--bg-primary);
     position: relative;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 button, input, textarea, select{
     font-family: inherit;
+    background-color: inherit;
 }
 
 ul, ol{

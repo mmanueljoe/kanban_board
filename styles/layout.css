@@ -13,6 +13,8 @@ aside.sidebar {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
+  overflow: hidden;
+  transition: width 0.3s;
 }
 
 .sidebar-top {
@@ -143,13 +145,20 @@ aside.sidebar {
   align-items: center;
   padding: 0.3rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
 
 .toggle-thumb {
   width: 1.4rem;
   height: 1.4rem;
   border-radius: 50%;
   background-color: var(--white);
+  transition: all 0.3s;
+}
+
+.theme-toggle .active .toggle-thumb{
+  transform: translateX(20px);
 }
 
 .hide-sidebar {
