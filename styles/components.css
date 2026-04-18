@@ -141,6 +141,7 @@
     z-index: 10;
     max-height: 90vh;
     overflow-y: auto;
+    color: var(--text-primary);
 }
 
 
@@ -311,10 +312,12 @@
     padding: var(--spacing-md) 0;
     z-index: 999;
     box-shadow: var(--shadow-card);
+    display: none;
 }
 
-.mobile-menu[aria-hidden="true"]{
-    display: none;
+
+.mobile-menu.open{
+    display: block;
 }
 
 
@@ -347,5 +350,7 @@
 .sidebar.hidden ~ .show-sidebar-btn, .sidebar.hidden + .show-sidebar-btn{
     display: flex;
 }
+
+
 
 

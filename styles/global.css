@@ -15,14 +15,14 @@ html{
     scroll-behavior: smooth;
 }
 
-body{
+body, aside, .card, .top-nav{
     font-family: var(--font-body);
     font-size: var(--text-body-lg);
     line-height: var(--leading-body-lg);
     color: var(--black);
     background-color: var(--bg-primary);
     position: relative;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 button, input, textarea, select{

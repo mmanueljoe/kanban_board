@@ -47,30 +47,48 @@ showSidebarBtn.addEventListener("click", () => {
 });
 
 // ==== THEME TOGGLER ====
+
 const themeToggler = document.getElementById("theme-toggler");
+const themeTogglerMobile = document.getElementById("theme-toggler-mb");
 const htmlElement = document.documentElement;
 
+function setTheme(theme) {
+  htmlElement.dataset.theme = theme;
 
+  const isDark = theme === "dark";
 
-const toggleTracker = document.getElementsByClassName("toggle-track")[0];
+  themeToggler
+    .querySelector(".toggle-track")
+    .classList.toggle("active", isDark);
+  themeTogglerMobile
+    .querySelector(".toggle-track")
+    .classList.toggle("active", isDark);
+}
 
-themeToggler.addEventListener("click", () => {
-    // check current theme
-    const currentTheme = htmlElement.getAttribute("data-theme");
+function toggleTheme() {
+  const next = htmlElement.dataset.theme === "light" ? "dark" : "light";
+  setTheme(next);
+}
 
-    const newTheme = currentTheme === "light" ? "dark" : "light";
+themeToggler.addEventListener("click", toggleTheme);
 
-    // update theme-attribute
-    htmlElement.setAttribute('data-theme', newTheme);
-
-
-    // toggle a class on the tracker for sliding animation
-    const toggleTrack = themeToggler.querySelector('.toggle-track');
-    toggleTrack.classList.toggle('active');
-});
-
+themeTogglerMobile.addEventListener("click", toggleTheme);
 
 // ==== MOBILE MENU ====
+const mobileMenuBtn = document.getElementById("mobile-menu-toggler");
+const mobileMenu = document.getElementById("mobile-menu");
+
+function setMobileMenuOpen(isOpen) {
+  mobileMenu.classList.toggle("open", isOpen);
+
+  mobileMenuBtn.setAttribute("aria-expanded", String(isOpen));
+
+  mobileMenuBtn.setAttribute("aria-hidden", String(!isOpen));
+}
+
+mobileMenuBtn.addEventListener("click", () =>
+  setMobileMenuOpen(!mobileMenu.classList.contains("open")),
+);
 
 // ==== BOARD SWITCHING ====
 

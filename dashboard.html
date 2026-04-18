@@ -37,8 +37,9 @@
               <i data-lucide="panels-right-bottom"></i>
               Roadmap
             </li>
-            <li class="heading-md sidebar-menu-item board-item-new"
-            id="create-board"
+            <li
+              class="heading-md sidebar-menu-item board-item-new"
+              id="create-board"
             >
               <i data-lucide="panels-right-bottom"></i>
               +Create New Board
@@ -64,6 +65,8 @@
     <button class="show-sidebar-btn heading-md" id="show-sidebar">
       <i data-lucide="eye"></i>
     </button>
+
+    <!-- main wrapper -->
     <div class="main-wrapper">
       <!-- header -->
       <header class="top-nav">
@@ -71,7 +74,11 @@
           <img class="mobile-logo" src="/assets/logo.svg" alt="Logo" />
           <div class="board-title">
             <span class="board-name">Platform Launch</span>
-            <i data-lucide="chevron-down" class="mobile-only"></i>
+            <i
+              data-lucide="chevron-down"
+              class="mobile-only"
+              id="mobile-menu-toggler"
+            ></i>
           </div>
         </div>
 
@@ -79,7 +86,11 @@
           <button class="btn btn-primary-lg mobile-only" id="btn-add-task-mb">
             <i data-lucide="plus"></i>
           </button>
-          <button class="btn btn-primary-lg btn-add-task" type="button" id="btn-add-task">
+          <button
+            class="btn btn-primary-lg btn-add-task"
+            type="button"
+            id="btn-add-task"
+          >
             +Add New Task
           </button>
           <button class="btn-menu" type="button">
@@ -395,7 +406,7 @@
       </div>
     </div>
 
-    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu" id="mobile-menu">
       <div class="mobile-menu-content">
         <ul class="sidebar-menu-items">
           <li class="heading-md sidebar-menu-item active">
@@ -411,7 +422,7 @@
             +Create New Board
           </li>
         </ul>
-        <div class="theme-toggle">
+        <div class="theme-toggle" id="theme-toggler-mb">
           <i data-lucide="sun"></i>
           <div class="toggle-track">
             <div class="toggle-thumb"></div>
